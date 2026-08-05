@@ -3,971 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steven Ruiz Cortez - Portafolio & CV Profesional</title>
-    <!-- Font Awesome Icons -->
+    <title>Steven Ruiz | Portafolio Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-primary: #0a0f1d;
-            --bg-secondary: #111827;
-            --bg-card: rgba(30, 41, 59, 0.7);
-            --bg-card-hover: rgba(40, 53, 76, 0.85);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --border-highlight: rgba(56, 189, 248, 0.4);
-            
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
-            
-            --accent-cyan: #38bdf8;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --accent-emerald: #10b981;
-            
-            --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #8b5cf6 100%);
-            --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.15);
-            --glass-backdrop: blur(16px) saturate(180%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Subtle grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: 
-                radial-gradient(rgba(56, 189, 248, 0.07) 1px, transparent 1px),
-                radial-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 15, 29, 0.85);
-            backdrop-filter: var(--glass-backdrop);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.3rem;
-            letter-spacing: -0.5px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 6px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .nav-cta {
-            background: var(--gradient-primary);
-            color: #fff !important;
-            padding: 0.6rem 1.3rem;
-            border-radius: 8px;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
-            transition: transform 0.2s ease !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 100px;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-            min-height: 90vh;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: var(--accent-emerald);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-title span {
-            background: var(--gradient-primary);
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #22d3ee);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .hero-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .hero-meta-item i {
-            color: var(--accent-cyan);
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.85rem 1.8rem;
-            border-radius: 10px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.45);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-cyan);
-            transform: translateY(-3px);
-        }
-
-        /* Profile Card */
-        .profile-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            backdrop-filter: var(--glass-backdrop);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .profile-img-wrapper {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 1.5rem auto;
-            border-radius: 50%;
-            padding: 4px;
-            background: var(--gradient-primary);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            background-color: var(--bg-secondary);
-        }
-
-        .profile-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .profile-tagline {
-            font-size: 0.88rem;
-            color: var(--accent-cyan);
-            margin-bottom: 1.2rem;
-        }
-
-        .profile-info-list {
-            list-style: none;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.2rem;
-        }
-
-        .profile-info-item {
-            display: flex;
-            justify-content: space-between;
-            color: var(--text-muted);
-        }
-
-        .profile-info-item strong {
-            color: var(--text-main);
-        }
-
-        /* Sections */
-        section {
-            padding: 90px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 4rem auto;
-        }
-
-        .section-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-        }
-
-        .glass-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: var(--glass-backdrop);
+        .card-hover:hover {
+            transform: translateY(-5px);
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
-
-        .glass-card:hover {
-            border-color: var(--border-highlight);
-            transform: translateY(-4px);
+        .bg-dark-accent {
+            background: #0f172a;
         }
-
-        /* Grid Layouts */
-        .about-grid, .two-column-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .strengths-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 0.8rem;
-            margin-top: 1.2rem;
-        }
-
-        .strength-badge {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            padding: 0.7rem;
-            border-radius: 10px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-        }
-
-        .strength-badge i {
-            color: var(--accent-emerald);
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px;
-            height: 100%;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 2.5rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 11px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--bg-primary);
-            border: 3px solid var(--accent-cyan);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .timeline-role {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .timeline-company {
-            color: var(--accent-cyan);
-            font-weight: 600;
-            margin-top: 0.2rem;
-        }
-
-        .timeline-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.82rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            color: var(--text-muted);
-        }
-
-        .timeline-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            font-size: 0.78rem;
-            padding: 0.25rem 0.7rem;
-            border-radius: 50px;
-            background: rgba(56, 189, 248, 0.08);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        /* Skills Progress */
-        .skills-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .skill-level {
-            color: var(--accent-cyan);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient-primary);
-            border-radius: 10px;
-        }
-
-        /* References Grid */
-        .references-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .ref-card {
-            text-align: center;
-        }
-
-        .ref-avatar {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid var(--accent-cyan);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem auto;
-            color: var(--accent-cyan);
-            font-size: 1.3rem;
-        }
-
-        /* Contact Section */
-        .contact-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
-            border: 1px solid var(--border-highlight);
-            border-radius: 24px;
-            padding: 3.5rem 2rem;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.9rem 1.6rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .contact-btn:hover {
-            border-color: var(--accent-cyan);
-            background: rgba(56, 189, 248, 0.1);
-            transform: translateY(-3px);
-        }
-
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2.5rem 0;
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 0.88rem;
-        }
-
-        @media (max-width: 992px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
-            .hero-meta, .hero-buttons { justify-content: center; }
-            .about-grid, .two-column-grid, .references-grid { grid-template-columns: 1fr; }
-            .timeline::before { left: 10px; }
-            .timeline-item { padding-left: 35px; }
-            .timeline-dot { left: 1px; }
+        .border-dark-accent {
+            border-color: #1e293b;
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-300">
 
-    <!-- Header / Navbar -->
-    <header>
-        <div class="container">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#educacion">Educación</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-
-        <!-- Hero Section -->
-        <section id="inicio" class="hero">
-            <div>
-                <div class="hero-badge">
-                    <i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Disponible para Oportunidades
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-950/80 backdrop-blur-md z-50 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-xl font-bold gradient-text">Steven Ruiz</div>
+                <div class="hidden md:flex space-x-8 font-medium text-slate-400">
+                    <a href="#inicio" class="hover:text-indigo-400 transition">Inicio</a>
+                    <a href="#experiencia" class="hover:text-indigo-400 transition">Experiencia</a>
+                    <a href="#educacion" class="hover:text-indigo-400 transition">Educación</a>
+                    <a href="#habilidades" class="hover:text-indigo-400 transition">Habilidades</a>
+                    <a href="#contacto" class="hover:text-indigo-400 transition">Contacto</a>
                 </div>
-                <h1 class="hero-title">
-                    Hola, soy <br>
-                    <span>Steven Ruiz Cortez</span>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 py-4 space-y-4">
+            <a href="#inicio" class="block text-slate-400 hover:text-indigo-400">Inicio</a>
+            <a href="#experiencia" class="block text-slate-400 hover:text-indigo-400">Experiencia</a>
+            <a href="#educacion" class="block text-slate-400 hover:text-indigo-400">Educación</a>
+            <a href="#habilidades" class="block text-slate-400 hover:text-indigo-400">Habilidades</a>
+            <a href="#contacto" class="block text-slate-400 hover:text-indigo-400">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 space-y-6">
+                <h2 class="text-indigo-400 font-semibold tracking-wide uppercase">Hola, soy Steven Ruiz</h2>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                    Gestión Estratégica y <span class="gradient-text">Administración Tecnológica</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Bachiller Técnico en Sistemas Informáticos, Emprendedor Tecnológico y estudiante de Tecnología en Administración de Empresas. Especializado en automatización de flujos comerciales, gestión documental y optimización de operaciones corporativas.
+                <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                    Bachiller Técnico en Administración de Sistemas Informáticos y futuro Tecnólogo en Administración de Empresas. Especialista en optimización de procesos, gestión de e-commerce y atención al cliente de alto nivel.
                 </p>
-                
-                <div class="hero-meta">
-                    <div class="hero-meta-item">
-                        <i class="fa-solid fa-location-dot"></i> Guayaquil, Ecuador
-                    </div>
-                    <div class="hero-meta-item">
-                        <i class="fa-solid fa-building-user"></i> Fundador de CORTEX EC
-                    </div>
-                    <div class="hero-meta-item">
-                        <i class="fa-solid fa-language"></i> Español (Nativo) | Inglés (Básico)
-                    </div>
-                </div>
-
-                <div class="hero-buttons">
-                    <a href="https://wa.me/593999830044" target="_blank" class="btn btn-primary">
-                        <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
-                    </a>
-                    <a href="#experiencia" class="btn btn-secondary">
-                        <i class="fa-solid fa-briefcase"></i> Ver Experiencia
-                    </a>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contacto" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-500 transition shadow-lg shadow-indigo-900/20">Contactar ahora</a>
+                    <a href="#experiencia" class="border border-slate-700 text-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-slate-900 transition">Ver trayectoria</a>
                 </div>
             </div>
-
-            <!-- Profile Glass Card -->
-                <h3 class="profile-name">Steven Ruiz Cortez</h3>
-                <p class="profile-tagline">Sistemas Informáticos & Gestión Empresarial</p>
-
-                <ul class="profile-info-list">
-                    <li class="profile-info-item">
-                        <span>Estado Civil:</span>
-                        <strong>Soltero</strong>
-                    </li>
-                    <li class="profile-info-item">
-                        <span>Fecha Nacimiento:</span>
-                        <strong>24 de Agosto, 2003</strong>
-                    </li>
-                    <li class="profile-info-item">
-                        <span>Teléfono:</span>
-                        <strong>+593999830044</strong>
-                    </li>
-                    <li class="profile-info-item">
-                        <span>Correo:</span>
-                        <strong>ruizsteven778@gmail.com</strong>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Sobre Mí Section -->
-        <section id="sobre-mi">
-            <div class="section-header">
-                <span class="section-tag">// Introducción</span>
-                <h2 class="section-title">Perfil Profesional</h2>
-            </div>
-
-            <div class="about-grid">
-                <div class="glass-card">
-                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">
-                        Soy un <strong>Bachiller Técnico en Administración de Sistemas Informáticos</strong>, actualmente cursando la carrera universitaria de <strong>Tecnología en Administración de Empresas</strong> en el <em>Instituto Tecnológico Superior Life College Internacional</em>.
-                    </p>
-                    <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">
-                        Cuento con una trayectoria integral en atención al cliente, administración de plataformas digitales y manejo de Office 365. Como fundador y administrador de <strong>CORTEX EC (Cortechnology)</strong>, he dirigido la gestión administrativa, elaboración de contratos laborales bajo el Código del Trabajo ecuatoriano, automatización de procesos comerciales con herramientas como <strong>n8n</strong> y <strong>ManyChat</strong>, y negociación con proveedores.
-                    </p>
-                    <p style="color: var(--text-muted); line-height: 1.8;">
-                        Orientado al cumplimiento estricto de procedimientos administrativos, con alta capacidad analítica para el monitoreo de contratos, convenios y supervisión de servicios corporativos.
-                    </p>
+            <div class="flex-1 relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-indigo-600 to-cyan-500 rounded-full overflow-hidden shadow-2xl mx-auto flex items-center justify-center text-white text-8xl font-bold border-4 border-slate-900">
+                    SR
                 </div>
-
-                <div class="glass-card">
-                    <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--accent-cyan);">
-                        <i class="fa-solid fa-award"></i> Fortalezas Clave
-                    </h3>
-                    <div class="strengths-grid">
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Liderazgo</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Organización</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Puntualidad</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Honestidad</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Comunicativo</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Analítico</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Atención al Cliente</div>
-                        <div class="strength-badge"><i class="fa-solid fa-check"></i> Visionario</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experiencia Laboral Section -->
-        <section id="experiencia">
-            <div class="section-header">
-                <span class="section-tag">// Trayectoria</span>
-                <h2 class="section-title">Experiencia Laboral</h2>
-            </div>
-
-            <div class="timeline">
-
-                <!-- Experiencia 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-role">Fundador, Gerente General y Administrador</h3>
-                                <div class="timeline-company"><i class="fa-solid fa-store"></i> CORTEX EC (Cortechnology)</div>
-                            </div>
-                            <span class="timeline-date">Agosto 2023 – Actualidad</span>
+                <div class="absolute -bottom-4 -right-4 bg-slate-900 p-4 rounded-xl shadow-lg border border-slate-800 hidden md:block">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-900/30 p-2 rounded-full text-green-400">
+                            <i class="fas fa-check"></i>
                         </div>
-                        <div class="timeline-body">
-                            <p style="color: var(--text-muted); margin-bottom: 0.8rem;">
-                                Fundación y administración integral de empresa de e-commerce y dropshipping de accesorios tecnológicos (audífonos, teclados, mouses gaming, accesorios de carga).
-                            </p>
-                            <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.93rem;">
-                                <li>Gestión administrativa completa: elaboración de contratos laborales bajo el Código del Trabajo ecuatoriano.</li>
-                                <li>Reclutamiento, selección y capacitación de personal de ventas remoto.</li>
-                                <li>Manejo de convenios con proveedores y coordinación de operaciones comerciales (Meta Marketplace, ManyChat, WhatsApp Business).</li>
-                                <li>Automatización de flujos de trabajo e integración con <strong>n8n</strong>.</li>
-                                <li>Gestión de caja, control de inventario y seguimiento de indicadores de ventas con esquema de comisiones.</li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span class="tag">E-commerce</span>
-                                <span class="tag">Gestión Administrativa</span>
-                                <span class="tag">n8n & ManyChat</span>
-                                <span class="tag">Contratación Laboral</span>
-                                <span class="tag">Control de Caja e Inventario</span>
-                            </div>
+                        <div>
+                            <p class="text-xs text-slate-500">Estado Actual</p>
+                            <p class="font-bold text-sm text-slate-200">Disponible para Proyectos</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Experiencia 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-role">Ejecutivo de Ventas y Atención al Cliente</h3>
-                                <div class="timeline-company"><i class="fa-solid fa-headset"></i> Grupo M2G / Claro Ecuador</div>
-                            </div>
-                            <span class="timeline-date">Julio 2022 – Noviembre 2023</span>
-                        </div>
-                        <div class="timeline-body">
-                            <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.93rem;">
-                                <li>Gestión de cartera de clientes y seguimiento de contratos de servicios de telecomunicaciones.</li>
-                                <li>Coordinación directa con proveedores de red.</li>
-                                <li>Registro, validación y control de documentación contractual de clientes.</li>
-                                <li>Cumplimiento de procedimientos operativos y manejo/arqueo de caja en puntos de venta.</li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span class="tag">Atención al Cliente</span>
-                                <span class="tag">Ventas Telecom</span>
-                                <span class="tag">Manejo de Caja</span>
-                                <span class="tag">Gestión Documental</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experiencia 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-role">Ejecutivo de Ventas</h3>
-                                <div class="timeline-company"><i class="fa-solid fa-mobile-screen-button"></i> Compañía Tuenti</div>
-                            </div>
-                            <span class="timeline-date">Febrero 2022 – Mayo 2022</span>
-                        </div>
-                        <div class="timeline-body">
-                            <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.93rem;">
-                                <li>Asesoría personalizada en planes de telefonía celular.</li>
-                                <li>Gestión documental de contratos de servicio y registro de nuevos clientes.</li>
-                                <li>Cumplimiento de procedimientos de venta y servicio post-venta.</li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span class="tag">Asesoría Comercial</span>
-                                <span class="tag">Registro de Clientes</span>
-                                <span class="tag">Ventas Directas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
-
-        <!-- Educación & Habilidades Grid -->
-        <section id="educacion">
-            <div class="two-column-grid">
-                
-                <!-- Educación -->
-                <div>
-                    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
-                        <span class="section-tag">// Formación</span>
-                        <h2 class="section-title">Educación</h2>
-                    </div>
-
-                    <div class="glass-card" style="margin-bottom: 1.5rem;">
-                        <h3 style="font-size: 1.15rem; font-weight: 700;">Tecnología en Administración de Empresas</h3>
-                        <div style="color: var(--accent-cyan); font-weight: 500; font-size: 0.95rem;">Instituto Tecnológico Superior Life College Internacional</div>
-                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-dim); display: block; margin: 0.4rem 0 0.8rem 0;">En curso</span>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">
-                            Formación en gestión empresarial, administración de procesos corporativos, manejo de contratos, control de proveedores y coordinación de servicios.
-                        </p>
-                    </div>
-
-                    <div class="glass-card">
-                        <h3 style="font-size: 1.15rem; font-weight: 700;">Bachillerato Técnico — Administración de Sistemas Informáticos</h3>
-                        <div style="color: var(--accent-cyan); font-weight: 500; font-size: 0.95rem;">Unidad Educativa Academia Naval Almirante Illingworth</div>
-                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-dim); display: block; margin: 0.4rem 0 0.8rem 0;">2016 – 2022</span>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">
-                            Bachiller técnico con enfoque en sistemas informáticos, administración de datos, gestión documental y procedimientos operativos digitales.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Habilidades Específicas -->
-                <div id="habilidades">
-                    <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
-                        <span class="section-tag">// Competencias</span>
-                        <h2 class="section-title">Habilidades Específicas</h2>
-                    </div>
-
-                    <div class="glass-card">
-                        <div class="skills-list">
-                            
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Microsoft Office 365 (Word, Excel, Outlook, Teams)</span>
-                                    <span class="skill-level">Intermedio – Avanzado</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
-                            </div>
-
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Digitalización y Gestión de Documentos</span>
-                                    <span class="skill-level">Avanzado</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
-                            </div>
-
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Soporte Técnico (Software y Hardware)</span>
-                                    <span class="skill-level">Avanzado</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-                            </div>
-
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Atención al Cliente y Coordinación de Proveedores</span>
-                                    <span class="skill-level">Avanzado</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
-                            </div>
-
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Control y Registro de Contratos / Convenios</span>
-                                    <span class="skill-level">Básico – Intermedio</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
-                            </div>
-
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Procedimientos de Liquidación en Caja</span>
-                                    <span class="skill-level">Básico</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 60%;"></div></div>
-                            </div>
-
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Crédito y Cobranza</span>
-                                    <span class="skill-level">Básico</span>
-                                </div>
-                                <div class="skill-bar"><div class="skill-progress" style="width: 60%;"></div></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Referencias Personales -->
-        <section id="referencias">
-            <div class="section-header">
-                <span class="section-tag">// Validación</span>
-                <h2 class="section-title">Referencias</h2>
-            </div>
-
-            <div class="references-grid">
-                <div class="glass-card ref-card">
-                    <div class="ref-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                    <h3 style="font-size: 1.1rem; font-weight: 700;">Lic. Rigoleth Peñafiel</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem;">Referencia Profesional</p>
-                    <a href="tel:0967009362" style="color: var(--accent-cyan); text-decoration: none; font-family: 'JetBrains Mono', monospace; margin-top: 0.5rem; display: inline-block;">
-                        <i class="fa-solid fa-phone"></i> 0967009362
-                    </a>
-                </div>
-
-                <div class="glass-card ref-card">
-                    <div class="ref-avatar"><i class="fa-solid fa-user-gear"></i></div>
-                    <h3 style="font-size: 1.1rem; font-weight: 700;">Ing. Christian Boris Ruiz</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem;">Referencia Profesional</p>
-                    <a href="tel:0994038422" style="color: var(--accent-cyan); text-decoration: none; font-family: 'JetBrains Mono', monospace; margin-top: 0.5rem; display: inline-block;">
-                        <i class="fa-solid fa-phone"></i> 0994038422
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacto Section -->
-        <section id="contacto">
-            <div class="contact-card">
-                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.8rem;">¿Hablamos?</h2>
-                <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto;">
-                    Disponible para proyectos de administración, sistemas, e-commerce, atención al cliente o consultoría en automatización.
-                </p>
-
-                <div class="contact-methods">
-                    <a href="tel:0999830044" class="contact-btn">
-                        <i class="fa-solid fa-phone" style="color: var(--accent-cyan);"></i>
-                        <span>0999830044</span>
-                    </a>
-
-                    <a href="mailto:ruizsteven778@gmail.com" class="contact-btn">
-                        <i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i>
-                        <span>ruizsteven778@gmail.com</span>
-                    </a>
-
-                    <a href="https://wa.me/593999830044" target="_blank" class="contact-btn" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08);">
-                        <i class="fa-brands fa-whatsapp" style="color: var(--accent-emerald);"></i>
-                        <span>WhatsApp Directo</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Steven Eduardo Ruiz Cortez. Guayaquil, Ecuador.</p>
         </div>
-    </footer>
+    </section>
 
+    <!-- Strengths Bar -->
+    <div class="bg-slate-900/50 py-8 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 overflow-x-auto">
+            <div class="flex justify-between items-center gap-8 min-w-max">
+                <span class="flex items-center gap-2 text-slate-400 font-medium"><i class="fas fa-users text-indigo-400"></i> Liderazgo</span>
+                <span class="flex items-center gap-2 text-slate-400 font-medium"><i class="fas fa-tasks text-indigo-400"></i> Organización</span>
+                <span class="flex items-center gap-2 text-slate-400 font-medium"><i class="fas fa-clock text-indigo-400"></i> Puntualidad</span>
+                <span class="flex items-center gap-2 text-slate-400 font-medium"><i class="fas fa-shield-alt text-indigo-400"></i> Honestidad</span>
+                <span class="flex items-center gap-2 text-slate-400 font-medium"><i class="fas fa-comments text-indigo-400"></i> Comunicativo</span>
+                <span class="flex items-center gap-2 text-slate-400 font-medium"><i class="fas fa-chart-line text-indigo-400"></i> Analítico</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Section -->
+    <section id="experiencia" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 text-white">Experiencia <span class="text-indigo-400">Profesional</span></h2>
+            
+            <div class="space-y-12">
+                <!-- Job 1 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 card-hover">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">CORTEX EC (Cortechnology)</h3>
+                                <p class="text-indigo-400 font-medium">Fundador, Gerente General y Administrador</p>
+                            </div>
+                            <span class="bg-indigo-900/30 text-indigo-300 text-sm px-3 py-1 rounded-full font-semibold mt-2 md:mt-0 border border-indigo-800/50">Ago 2023 – Actualidad</span>
+                        </div>
+                        <p class="text-slate-400 mb-4">Fundación y administración integral de empresa de e-commerce y dropshipping de accesorios tecnológicos.</p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-400">
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Gestión administrativa y contratos laborales.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Reclutamiento y capacitación de personal remoto.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Automatización de procesos con n8n y ManyChat.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Control de inventario e indicadores de ventas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-slate-700 rounded-full"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 card-hover">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Grupo M2G / Claro Ecuador</h3>
+                                <p class="text-indigo-400 font-medium">Ejecutivo de Ventas y Atención al Cliente</p>
+                            </div>
+                            <span class="bg-slate-800 text-slate-400 text-sm px-3 py-1 rounded-full font-semibold mt-2 md:mt-0 border border-slate-700">Jul 2022 – Nov 2023</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Gestión de cartera de clientes y contratos de telecomunicaciones.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Coordinación con proveedores y control de documentación.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Manejo de caja y procedimientos operativos en punto de venta.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-slate-700 rounded-full"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 card-hover">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Compañía Tuenti</h3>
+                                <p class="text-indigo-400 font-medium">Ejecutivo de Ventas</p>
+                            </div>
+                            <span class="bg-slate-800 text-slate-400 text-sm px-3 py-1 rounded-full font-semibold mt-2 md:mt-0 border border-slate-700">Feb 2022 – May 2022</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Asesoría en planes de telefonía y gestión documental.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-indigo-500 mt-1"></i> Registro de clientes y cumplimiento de procesos de post-venta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="educacion" class="py-20 bg-slate-900/30 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 text-white">Formación <span class="text-indigo-400">Académica</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 card-hover">
+                    <div class="bg-indigo-900/50 w-12 h-12 rounded-lg flex items-center justify-center text-indigo-400 mb-6 text-xl">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Tecnología en Administración de Empresas</h3>
+                    <p class="text-indigo-400 font-medium mb-4">ITS Life College Internacional | En curso</p>
+                    <p class="text-slate-400 text-sm">Enfoque en gestión empresarial, manejo de contratos, control de proveedores y coordinación de servicios corporativos.</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 card-hover">
+                    <div class="bg-indigo-900/50 w-12 h-12 rounded-lg flex items-center justify-center text-indigo-400 mb-6 text-xl">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Bachillerato Técnico en Sistemas</h3>
+                    <p class="text-indigo-400 font-medium mb-4">U.E. Academia Naval Almirante Illingworth | 2016 – 2022</p>
+                    <p class="text-slate-400 text-sm">Especialización en administración de sistemas informáticos, gestión documental y procedimientos operativos digitales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 text-white">Habilidades <span class="text-indigo-400">Técnicas</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Group 1 -->
+                <div class="space-y-6">
+                    <h3 class="text-lg font-bold border-b-2 border-indigo-500 pb-2 inline-block text-white">Tecnología y Software</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Microsoft Office 365</span>
+                                <span class="text-sm text-slate-500">Avanzado</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Soporte Técnico (Hw/Sw)</span>
+                                <span class="text-sm text-slate-500">Avanzado</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Digitalización Documental</span>
+                                <span class="text-sm text-slate-500">Avanzado</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Group 2 -->
+                <div class="space-y-6">
+                    <h3 class="text-lg font-bold border-b-2 border-indigo-500 pb-2 inline-block text-white">Administración</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Atención al Cliente</span>
+                                <span class="text-sm text-slate-500">Avanzado</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Control de Contratos</span>
+                                <span class="text-sm text-slate-500">Intermedio</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Gestión de Proveedores</span>
+                                <span class="text-sm text-slate-500">Avanzado</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Group 3 -->
+                <div class="space-y-6">
+                    <h3 class="text-lg font-bold border-b-2 border-indigo-500 pb-2 inline-block text-white">Idiomas y Otros</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Español</span>
+                                <span class="text-sm text-slate-500">Nativo</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Inglés</span>
+                                <span class="text-sm text-slate-500">Básico</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-xl border border-dashed border-slate-700">
+                            <p class="text-xs text-slate-500 uppercase font-bold mb-2">Otras Habilidades</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700 text-slate-300">Caja</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700 text-slate-300">Cobranza</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700 text-slate-300">Dropshipping</span>
+                                <span class="bg-slate-800 px-2 py-1 rounded text-xs border border-slate-700 text-slate-300">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-slate-900 border-t border-slate-800 text-white px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">¿Listo para trabajar juntos?</h2>
+            <p class="text-slate-400 mb-12 text-lg">Estoy disponible para nuevas oportunidades y colaboraciones estratégicas.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <a href="mailto:ruizsteven778@gmail.com" class="bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl hover:bg-slate-800 transition group border border-slate-700">
+                    <div class="bg-indigo-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Correo Electrónico</h3>
+                    <p class="text-indigo-300">ruizsteven778@gmail.com</p>
+                </a>
+                <a href="tel:+593999830044" class="bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl hover:bg-slate-800 transition group border border-slate-700">
+                    <div class="bg-indigo-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Teléfono / WhatsApp</h3>
+                    <p class="text-indigo-300">0999830044</p>
+                </a>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-slate-500 text-sm">
+                <p>&copy; 2026 Steven Eduardo Ruiz Cortez. Guayaquil, Ecuador.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
